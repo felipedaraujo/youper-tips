@@ -1,6 +1,6 @@
 {
-  "name": "youper",
-  "app_id": "",
+  "name": "Youper Tips",
+  "app_id": "31b7e9db",
   "gulpStartupTasks": [
     "sass",
     "watch"

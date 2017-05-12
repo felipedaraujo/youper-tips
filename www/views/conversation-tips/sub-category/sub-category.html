@@ -1,0 +1,21 @@
+<ion-view>
+  <ion-content class="stable-bg" scroll="false">
+
+    <div class="subcategory-container">
+      <div class="circles-container">
+        <ion-scroll direction="x" delegate-handle="cardsScroll" on-scroll="setCurrentCard()">
+            <circle ng-repeat="circle in cards" title="circle.title" circle-styles="circle.styles"
+                       title-styles="titleStyles" likes="circle.likes">
+            </circle>
+        </ion-scroll>
+      </div>
+
+      <div class="like-container">
+        <circle icon="like.icon.name" icon-styles="like.icon.styles" circle-styles="like.styles"
+                   animation="like.animation" toggle-like="toggleLike()">
+        </circle>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

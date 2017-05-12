@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Dating",
+    "styles": {
+      "size": 120,
+      "sizeUnit": "px",
+      "backgroundColor": "white",
+      "borderColor": "#ffc107",
+      "borderWidth": 4,
+      "position": "absolute",
+      "axisX": "calc(50% + 40px)",
+      "axisY": "calc(50% - 120px)"
+    },
+    "stateToGo": {
+      "name": "conversationTips.category",
+      "params": {
+        "categoryId": "dating"
+      }
+    },
+    "animation": "circle-bordered"
+  },
+  {
+    "title": "Hanging Out",
+    "styles": {
+      "size": 150,
+      "sizeUnit": "px",
+      "backgroundColor": "white",
+      "borderColor": "#ffc107",
+      "borderWidth": 4,
+      "position": "absolute",
+      "axisX": "calc(50% - 80px)",
+      "axisY": "calc(50% - 25px)"
+    },
+    "stateToGo": {
+      "name": "conversationTips.category",
+      "params": {
+        "categoryId": "hanging-out"
+      }
+    },
+    "animation": "circle-bordered"
+  },
+  {
+    "title": "Networking",
+    "styles": {
+      "size": 150,
+      "sizeUnit": "px",
+      "backgroundColor": "white",
+      "borderColor": "#ffc107",
+      "borderWidth": 4,
+      "position": "absolute",
+      "axisX": "calc(50% + 80px)",
+      "axisY": "calc(50% + 25px)"
+    },
+    "stateToGo": {
+      "name": "conversationTips.category",
+      "params": {
+        "categoryId": "networking"
+      }
+    },
+    "animation": "circle-bordered"
+  },
+  {
+    "title": "Work",
+    "styles": {
+      "size": 120,
+      "sizeUnit": "px",
+      "backgroundColor": "white",
+      "borderColor": "#ffc107",
+      "borderWidth": 4,
+      "position": "absolute",
+      "axisX": "calc(50% - 40px)",
+      "axisY": "calc(50% + 120px)"
+    },
+    "stateToGo": {
+      "name": "conversationTips.category",
+      "params": {
+        "categoryId": "work"
+      }
+    },
+    "animation": "circle-bordered"
+  }
+]

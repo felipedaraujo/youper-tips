@@ -1,22 +1,175 @@
-/*
-To customize the look and feel of Ionic, you can override the variables
-in ionic's _variables.scss file.
-
-For example, you might change some of the default colors:
-
-$light:                           #fff !default;
-$stable:                          #f8f8f8 !default;
-$positive:                        #387ef5 !default;
-$calm:                            #11c1f3 !default;
-$balanced:                        #33cd5f !default;
-$energized:                       #ffc900 !default;
-$assertive:                       #ef473a !default;
-$royal:                           #886aea !default;
-$dark:                            #444 !default;
-*/
-
+// To customize the look and feel of Ionic, you can override the variables
+// in ionic's _variables.scss file.
+//
+// For example, you might change some of the default colors:
+//
+// $light: #fff !default;
+// $calm: #11c1f3 !default;
+// $dark: #444 !default;
+$stable: #f5eee4 !default;
+$positive: #4a86e8 !default;
+$balanced: #6aa84f !default;
+$energized: #ffc107 !default;
+$assertive: #ffab40 !default;
+$royal: #d5a6bd !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
-
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+
+// General
+html {
+  font-family: "Roboto", "Segoe UI", sans-serif;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.scroll {
+  height: 100%;
+}
+
+.scroll-view.scroll-x {
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+  &::-webkit-scrollbar * {
+    background: transparent;
+  }
+}
+
+
+.bar-stable .button.energized {
+  color: $energized;
+}
+
+.bar.bar-stable {
+  background-image: none;
+}
+
+.bar .button.button-icon .icon:before,
+.bar .button.button-icon:before,
+.bar .button.button-icon.icon-left:before,
+.bar .button.button-icon.icon-right:before,
+.bar button.button-icon .icon:before,
+.bar button.button-icon:before,
+.bar button.button-icon.icon-left:before,
+.bar button.button-icon.icon-right:before {
+  font-size: 28px;
+}
+
+// Components
+.circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  white-space: normal;
+
+  .circle-item {
+    display: flex;
+    height: 100%;
+    font-size: 1.4em;
+    line-height: 1.2em;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+  }
+
+  .circle-item .like {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    margin: 0 auto;
+    font-size: 0.8em;
+    color: white;
+  }
+}
+
+.circle-scale {
+  transition: all .2s ease-in-out;
+
+  &:active {
+    transform: scale(1.1);
+  }
+}
+
+.circle-bordered {
+  &:after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    bottom: -4px;
+    right: -4px;
+    border: 1px $energized solid;
+    border-radius: 50%;
+    transition: all .2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  }
+
+  &:active:after {
+    top: -14px;
+    left: -14px;
+    bottom: -14px;
+    right: -14px;
+  }
+}
+
+// Category
+
+.category-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .title-container {
+    margin-top: 20px;
+  }
+
+  .circles-container {
+    flex: 1;
+    position: relative;
+  }
+}
+
+// Sub-category
+.subcategory-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .circles-container {
+      display: flex;
+      align-items: center;
+      flex: 1;
+
+      .scroll {
+        display: flex;
+        flex-direction: row;
+      }
+
+      circle {
+        padding-left: 2.5%;
+        padding-right: 2.5%;
+      }
+
+      circle:first-child {
+        padding-left: 10%;
+      }
+
+      circle:last-child {
+        padding-right: 10%;
+      }
+    }
+
+  .like-container {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+}

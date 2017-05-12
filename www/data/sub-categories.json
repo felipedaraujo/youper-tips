@@ -1,0 +1,55 @@
+[{
+    "styles": {
+      "size": 220,
+      "sizeUnit": "px",
+      "backgroundColor": "#ffc107",
+      "borderColor": "white",
+      "borderWidth": 18,
+      "position": "absolute",
+      "axisX": "50%",
+      "axisY": "50%"
+    }
+  },
+  {
+    "title": "Starting",
+    "styles": {
+      "size": 150,
+      "sizeUnit": "px",
+      "backgroundColor": "white",
+      "borderColor": "#ffc107",
+      "borderWidth": 4,
+      "position": "absolute",
+      "axisX": "calc(50% + 70px)",
+      "axisY": "calc(50% - 110px)"
+    },
+    "stateToGo": {
+      "name": "conversationTips.subCategory",
+      "params": {
+        "categoryId": "dating",
+        "subCategoryId": "starting"
+      }
+    },
+    "animation": "circle-bordered"
+  },
+  {
+    "title": "Maintaining",
+    "styles": {
+      "size": 150,
+      "sizeUnit": "px",
+      "backgroundColor": "white",
+      "borderColor": "#ffc107",
+      "borderWidth": 4,
+      "position": "absolute",
+      "axisX": "calc(50% - 60px)",
+      "axisY": "calc(50% + 120px)"
+    },
+    "stateToGo": {
+      "name": "conversationTips.subCategory",
+      "params": {
+        "categoryId": "dating",
+        "subCategoryId": "maintaining"
+      }
+    },
+    "animation": "circle-bordered"
+  }
+]

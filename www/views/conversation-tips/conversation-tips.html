@@ -1,0 +1,19 @@
+<ion-view hide-back-button="true" scroll="false">
+  <ion-nav-buttons side="left">
+    <button class="button button-icon icon ion-android-close energized" ui-sref="home"></button>
+  </ion-nav-buttons>
+
+  <ion-content class="stable-bg">
+    <div class="category-container">
+      <div class="title-container">
+        <h1 class="text-center">Let's rock with these conversation tips</h1>
+      </div>
+
+      <div class="circles-container">
+        <circle ng-repeat="circle in categories" title="circle.title" circle-styles="circle.styles"
+                   state-to-go="circle.stateToGo" animation="circle.animation">
+        </circle>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

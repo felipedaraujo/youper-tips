@@ -3,18 +3,17 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('youper', ['ionic'])
+angular.module('youper', [
+    'ionic',
+    'youper.home',
+    'youper.conversationTips',
+    'youper.components'
+  ])
 
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
       if (window.cordova && window.cordova.plugins.Keyboard) {
-        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-        // for form inputs)
         cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-
-        // Don't remove this line unless you know what you are doing. It stops the viewport
-        // from snapping when text inputs are focused. Ionic handles this internally for
-        // a much nicer keyboard experience.
         cordova.plugins.Keyboard.disableScroll(true);
       }
       if (window.StatusBar) {
@@ -23,23 +22,38 @@ angular.module('youper', ['ionic'])
     });
   })
   .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
-    $stateProvider.state("home", {
-        url: "/home",
-        templateUrl: "views/home.html"
+    $stateProvider.state('home', {
+        url: '/home',
+        templateUrl: 'views/home/home.html'
       })
-      .state("conversationTips.index", {
-        url: "/conversation-tips",
-        templateUrl: "views/tools/conversation-tips/index.html"
+      .state('conversationTips', {
+        abstract: true,
+        template: `
+          <ion-pane>
+            <ion-nav-bar class="bar-stable" no-border>
+              <ion-nav-back-button class="button-icon icon ion-ios-arrow-back energized"></ion-nav-back-button>
+            </ion-nav-bar>
+            <ion-nav-view></ion-nav-view>
+          <ion-pane>
+        `
       })
-      .state("conversationTips.category", {
-        url: "/conversation-tips/:categoryId",
-        templateUrl: "views/tools/conversation-tips/category.html"
-
+      .state('conversationTips.index', {
+        url: '/conversation-tips',
+        templateUrl: 'views/conversation-tips/conversation-tips.html',
+        controller: 'ConversationTipsCtrl'
       })
-      .state("conversationTips.subCategory", {
-        url: "/conversation-tips/:categoryId/:subCategoryId",
-        templateUrl: "views/tools/conversation-tips/sub-category.html"
+      .state('conversationTips.category', {
+        url: '/conversation-tips/:categoryId',
+        templateUrl: 'views/conversation-tips/category/category.html',
+        controller: 'ConversationTipsCategoryCtrl'
+      })
+      .state('conversationTips.subCategory', {
+        url: '/conversation-tips/:categoryId/:subCategoryId',
+        templateUrl: 'views/conversation-tips/sub-category/sub-category.html',
+        controller: 'ConversationTipsSubCategoryCtrl'
       });
 
-    $urlRouterProvider.otherwise("/home");
+    $urlRouterProvider.otherwise('/home');
+
+    $ionicConfigProvider.backButton.text('').previousTitleText(false);
   });
